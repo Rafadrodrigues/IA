@@ -2,5 +2,21 @@
 
 {% block content %}
     <h1>APP ESTUDANTE</h1>
-{% endblock%}
-
+<!-- Realizando consultas na base de dados -->
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Formacao</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for elemento in lista %} 
+        <tr>
+            <td>{{ elemento.nome}}</td>
+            <td>{{ elemento.get_formacao_academica_display}}</td>
+        </tr>
+        {% endfor%}
+        </tbody>
+    </table>
+{% endblock %}
