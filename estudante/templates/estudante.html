@@ -8,6 +8,7 @@
         <tr>
             <th scope="col">Nome</th>
             <th scope="col">Formacao</th>
+            <th scope="col">E-mail</th>
         </tr>
         </thead>
         <tbody>
@@ -15,6 +16,7 @@
         <tr>
             <td>{{ elemento.nome}}</td>
             <td>{{ elemento.get_formacao_academica_display}}</td>
+            <td>{{ elemento.email}}</td>
         </tr>
         {% endfor%}
         </tbody>
