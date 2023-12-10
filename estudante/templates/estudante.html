@@ -3,14 +3,71 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<h2>Seja Bem-Vindo ao Educa+!</h2>
-<div class="container min-vh-100 d-flex justify-content-center align-items-center">
-  {% if user.is_authenticated %}
+  <!-- {% if user.is_authenticated %}
      Olá,{{ user.username }}, Seja Bem-Vindo!
      <a href="/signout" class="btn btn-danger">Logout</a>
-   {% else %}
-     <a href="/signin" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>Login</a> 
-     <a href="/signup" class="btn btn-success">Signup</a>
-   {% endif %}
-</div>
+   {% else %} -->
+
+   <div class="container min-vh-100 d-flex justify-content-center align-items-center">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2 mb-2" type="search" placeholder="Buscar" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="bg-primary p-3" style="width: 200px; height: 200px;">
+              <img src="..." alt="..." class="img-thumbnail">
+              <!-- Conteúdo do Quadrado 1 -->
+            </div>
+            <h4>Título 1</h4>
+            <h6>legenda 1</h6>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-primary p-3" style="width: 200px; height: 200px;">
+              <img src="..." alt="..." class="img-thumbnail">
+              <!-- Conteúdo do Quadrado 2 -->
+            </div>
+            <h4>Título 1</h4>
+            <h6>legenda 1</h6>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-primary p-3" style="width: 200px; height: 200px;">
+              <!-- Conteúdo do Quadrado 3 -->
+              <img src="..." alt="..." class="img-thumbnail">
+            </div>
+            <h4>Título 1</h4>
+            <h6>legenda 1</h6>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-primary p-3" style="width: 200px; height: 200px;">
+              <!-- Conteúdo do Quadrado 4-->
+              <img src="..." alt="..." class="img-thumbnail">
+            </div>
+            <h4>Título 1</h4>
+            <h6>legenda 1</h6>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-primary p-3" style="width: 200px; height: 200px;">
+              <!-- Conteúdo do Quadrado 5 -->
+              <img src="..." alt="..." class="img-thumbnail">
+            </div>
+            <h4>Título 1</h4>
+            <h6>legenda 1</h6>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-primary p-3" style="width: 200px; height: 200px;">
+              <!-- Conteúdo do Quadrado 6 -->
+              <img src="..." alt="..." class="img-thumbnail">
+            </div>
+            <h4>Título 1</h4>
+            <h6>legenda 1</h6>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+      <!-- Aqui vai ser colocado o link coletado pelo youtube apos o list
+      <a href="/signin" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>Logar</a> 
+      <a href="/signup" class="btn btn-success">Cadastrar</a>
+   {% endif %} -->
 {% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+  
+{% block content %}
+<div class="row">
+  <div class="col-md-7 bg-gradient-danger">
+    <!-- Content for the left column -->
+    <p>Em um cenário acadêmico repleto de desafios e inovações, o grupo de inteligência artificial se destacou ao criar um website </p>
+          <p>inovador como parte do trabalho prático de uma disciplina. Esse projeto não apenas </p>
+          <p>demonstra a habilidade técnica e criatividade do grupo, mas também destaca a aplicação prática dos conceitos aprendidos ao longo do curso</p>
+  </div>
+  <div class="col-md-4">
+    <div class="container min-vh-100 d-flex justify-content-center align-items-center">
+    <form method="post">
+      <svg class= "mx-auto" xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+      </svg>
+      <h2>Inscreva-se</h2>
+      {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <form class="form-inline" method="post">
+      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label>
+      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <option selected>Opções</option>
+        <option value="1">Tecnologia</option>
+        <option value="2">Saúde</option>
+        <option value="3">Matemática</option>
+        <option value="3">Literatura</option>
+      </select>
+    
+      <div class="custom-control custom-checkbox my-1 mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="customControlInline">
+        <label class="custom-control-label" for="customControlInline">Relembre minhas preferências</label>
+      </div>
+    <button type="submit" class="btn btn-success">Inscrever-se</button>
+    <p>Já tem conta?<a href="/">Logar</a></p>
+  </form>
+  </div>
+  </div>
+{% endblock %}
+<!-- <form method="post">
+  <h2>Inscreva-se</h2>
+  
+</form> 
+{% csrf_token %}
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault01">First name</label>
+        <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="Mark" required>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefaultUsername">Username</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+          </div>
+          <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationDefault03">City</label>
+        <input type="text" class="form-control" id="validationDefault03" placeholder="City" required>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationDefault04">State</label>
+        <input type="text" class="form-control" id="validationDefault04" placeholder="State" required>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationDefault05">Zip</label>
+        <input type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+        <label class="form-check-label" for="invalidCheck2">
+          Agree to terms and conditions
+        </label>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </form>
+</div>-->

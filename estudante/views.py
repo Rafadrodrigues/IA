@@ -32,48 +32,48 @@ def adicionar(request):
 
     return render(request,'adicionar_usuario.html',{'form':form})
 #Daqui para baixo foi tudo retirado do vídeo.
-def signup(request):
-    if request.user.is_authenticated:
-        return redirect('/')
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=password)
-            login(request, user)
-            return redirect('/')
-        else:
-            return render(request, 'signup.html', {'form': form})
-    else:
-        form = UserCreationForm()
-        return render(request, 'signup.html', {'form': form})
+# def signup(request):
+#     if request.user.is_authenticated:
+#         return redirect('/')
+#     if request.method == 'POST':
+#         form = UserCreationForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             username = form.cleaned_data.get('username')
+#             password = form.cleaned_data.get('password1')
+#             user = authenticate(username=username, password=password)
+#             login(request, user)
+#             return redirect('/')
+#         else:
+#             return render(request, 'signup.html', {'form': form})
+#     else:
+#         form = UserCreationForm()
+#         return render(request, 'signup.html', {'form': form})
    
-def home(request): 
-    return render(request, 'home.html')
+# def home(request): 
+#     return render(request, 'home.html')
    
-def signin(request):
-    if request.user.is_authenticated:
-        #Se o usuário for valido, carrega a página principal
-        return render(request, 'home.html')
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('/profile') #profile
-        else:
-            msg = 'Error Login'
-            form = AuthenticationForm(request.POST)
-            return render(request, 'login.html', {'form': form, 'msg': msg})
-    else:
-        form = AuthenticationForm()
-        return render(request, 'login.html', {'form': form})
+# def signin(request):
+#     if request.user.is_authenticated:
+#         #Se o usuário for valido, carrega a página principal
+#         return render(request, 'home.html')
+#     if request.method == 'POST':
+#         username = request.POST['username']
+#         password = request.POST['password']
+#         user = authenticate(request, username=username, password=password)
+#         if user is not None:
+#             login(request, user)
+#             return redirect('/profile') #profile
+#         else:
+#             msg = 'Error Login'
+#             form = AuthenticationForm(request.POST)
+#             return render(request, 'login.html', {'form': form, 'msg': msg})
+#     else:
+#         form = AuthenticationForm()
+#         return render(request, 'login.html', {'form': form})
   
-def profile(request): 
-    return render(request, 'profile.html')
+# def profile(request): 
+#     return render(request, 'profile.html')
    
 def signout(request):
     logout(request)

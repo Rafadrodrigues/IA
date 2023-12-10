@@ -1,6 +1,45 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>APP HOME</h1>
+{% if user.is_authenticated %}
+    Olá,{{ user.username }}, Seja Bem-Vindo!
+        <a href="/signout" class="btn btn-danger">Logout</a>
+    {% else %}
+    <div class="row">
+        <div class="col-md-7 ">
+          <!-- Content for the left column -->
+          <p>Em um cenário acadêmico repleto de desafios e inovações, o grupo de inteligência artificial se destacou ao criar um website </p>
+          <p>inovador como parte do trabalho prático de uma disciplina. Esse projeto não apenas </p>
+          <p>demonstra a habilidade técnica e criatividade do grupo, mas também destaca a aplicação prática dos conceitos aprendidos ao longo do curso</p>
+        </div>
+        <div class="col-md-4">
+            <div class="container min-vh-100 d-flex justify-content-center align-items-center">
+                <form method="post"> 
+                    <svg class= "mx-auto" xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                      <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                    </svg>
+                    <h2>Login</h2> {{ msg }}
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email </label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required name="username">
+                      <small id="emailHelp" class="form-text text-muted">Seu e-mail não será compartilhado com ninguém</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Senha</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required name="password">
+                    </div>
+                    <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
+                    </div>
+                    <button type="submit" class="btn btn-success">Logar</button>
+                    <p>Ainda não tem uma conta?<a href="/signup">Criar conta</a></p>
+                  </form>
+          </div>
+          </div>
+    {% endif %}
 {% endblock%}
 
+<!-- <a href="/signin" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>Logar</a> 
+        <a href="/signup" class="btn btn-success">Cadastrar</a> -->
