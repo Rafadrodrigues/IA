@@ -31,7 +31,7 @@ def adicionar(request):
             form = EquipeForm()
 
     return render(request,'adicionar_usuario.html',{'form':form})
-#Daqui para baixo foi tudo retirado do vídeo.
+# #Daqui para baixo foi tudo retirado do vídeo.
 # def signup(request):
 #     if request.user.is_authenticated:
 #         return redirect('/')
@@ -50,31 +50,7 @@ def adicionar(request):
 #         form = UserCreationForm()
 #         return render(request, 'signup.html', {'form': form})
    
-# def home(request): 
-#     return render(request, 'home.html')
-   
-# def signin(request):
-#     if request.user.is_authenticated:
-#         #Se o usuário for valido, carrega a página principal
-#         return render(request, 'home.html')
-#     if request.method == 'POST':
-#         username = request.POST['username']
-#         password = request.POST['password']
-#         user = authenticate(request, username=username, password=password)
-#         if user is not None:
-#             login(request, user)
-#             return redirect('/profile') #profile
-#         else:
-#             msg = 'Error Login'
-#             form = AuthenticationForm(request.POST)
-#             return render(request, 'login.html', {'form': form, 'msg': msg})
-#     else:
-#         form = AuthenticationForm()
-#         return render(request, 'login.html', {'form': form})
-  
-# def profile(request): 
-#     return render(request, 'profile.html')
-   
-def signout(request):
-    logout(request)
-    return redirect('/')
+
+# def signout(request):
+#     logout(request)
+#     return redirect('/')

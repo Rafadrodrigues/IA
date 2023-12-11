@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 def index(request):
     if request.user.is_authenticated:
         #Se o usuário for valido, carrega a página principal
-        return render(request, 'home.html')
+        return render(request, 'index.html')
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -45,9 +45,6 @@ def signup(request):
 # def profile(request): 
 #     return render(request, 'estudante.html')
 
-# def home(request): 
-#     return render(request, 'home.html')
- 
 def signout(request):
     logout(request)
     return redirect('/')

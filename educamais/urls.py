@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include 
-from estudante import views
+from home import views
 
 #Conectando as URLS dessa pagina com a pagina home
 urlpatterns = [
@@ -25,7 +25,7 @@ urlpatterns = [
     path('',include('home.urls')),
     #http://localhost:8000/estudante
     path('estudante/',include('estudante.urls')),
-    #Retirado do vídeo
     path('signout/',views.signout, name='signout'),
-    # path('signup/',views.signup, name='signup'),
+    path('signup/',views.signup, name='signup'),
+
 ]
